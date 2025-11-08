@@ -1,0 +1,11 @@
+
+*.exe
+*.dll
+
+bin/
+obj/
+Release/
+Debug/
+
+*.user
+*.suo
