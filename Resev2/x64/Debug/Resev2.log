@@ -1,0 +1,13 @@
+﻿  GameData.cpp
+D:\Учеба 2 сем\ООП\Resev2\GameData.cpp(6,26): error C2838: "LOCKER_CIPHER": недопустимое полное имя в объявлении члена
+D:\Учеба 2 сем\ООП\Resev2\GameData.cpp(6,26): error C2065: LOCKER_CIPHER: необъявленный идентификатор
+D:\Учеба 2 сем\ООП\Resev2\GameData.cpp(6,56): error C2838: "LOCKER_CIPHER": недопустимое полное имя в объявлении члена
+D:\Учеба 2 сем\ООП\Resev2\GameData.cpp(6,56): error C2065: LOCKER_CIPHER: необъявленный идентификатор
+D:\Учеба 2 сем\ООП\Resev2\GameData.cpp(11,26): error C2838: "CAPTAN_FILE": недопустимое полное имя в объявлении члена
+D:\Учеба 2 сем\ООП\Resev2\GameData.cpp(11,26): error C2065: CAPTAN_FILE: необъявленный идентификатор
+D:\Учеба 2 сем\ООП\Resev2\GameData.cpp(11,54): error C2838: "CAPTAN_FILE": недопустимое полное имя в объявлении члена
+D:\Учеба 2 сем\ООП\Resev2\GameData.cpp(11,54): error C2065: CAPTAN_FILE: необъявленный идентификатор
+  Game_logic.cpp
+  main.cpp
+D:\Учеба 2 сем\ООП\Resev2\main.cpp(90,27): warning C4244: инициализация: преобразование "__int64" в "int", возможна потеря данных
+  Создание кода...

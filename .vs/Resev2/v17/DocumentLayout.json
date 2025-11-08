@@ -1,0 +1,153 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\\u0423\u0447\u0435\u0431\u0430 2 \u0441\u0435\u043C\\\u041E\u041E\u041F\\Resev2\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{42136CCC-792E-49C2-B53D-8830B3212542}|Resev2.vcxproj|D:\\\u0423\u0447\u0435\u0431\u0430 2 \u0441\u0435\u043C\\\u041E\u041E\u041F\\Resev2\\GameData.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{42136CCC-792E-49C2-B53D-8830B3212542}|Resev2.vcxproj|solutionrelative:GameData.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42136CCC-792E-49C2-B53D-8830B3212542}|Resev2.vcxproj|D:\\\u0423\u0447\u0435\u0431\u0430 2 \u0441\u0435\u043C\\\u041E\u041E\u041F\\Resev2\\Game_logic.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{42136CCC-792E-49C2-B53D-8830B3212542}|Resev2.vcxproj|solutionrelative:Game_logic.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42136CCC-792E-49C2-B53D-8830B3212542}|Resev2.vcxproj|D:\\\u0423\u0447\u0435\u0431\u0430 2 \u0441\u0435\u043C\\\u041E\u041E\u041F\\Resev2\\GameData.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{42136CCC-792E-49C2-B53D-8830B3212542}|Resev2.vcxproj|solutionrelative:GameData.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42136CCC-792E-49C2-B53D-8830B3212542}|Resev2.vcxproj|D:\\\u0423\u0447\u0435\u0431\u0430 2 \u0441\u0435\u043C\\\u041E\u041E\u041F\\Resev2\\structs.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{42136CCC-792E-49C2-B53D-8830B3212542}|Resev2.vcxproj|solutionrelative:structs.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42136CCC-792E-49C2-B53D-8830B3212542}|Resev2.vcxproj|D:\\\u0423\u0447\u0435\u0431\u0430 2 \u0441\u0435\u043C\\\u041E\u041E\u041F\\Resev2\\UI_elements.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{42136CCC-792E-49C2-B53D-8830B3212542}|Resev2.vcxproj|solutionrelative:UI_elements.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42136CCC-792E-49C2-B53D-8830B3212542}|Resev2.vcxproj|D:\\\u0423\u0447\u0435\u0431\u0430 2 \u0441\u0435\u043C\\\u041E\u041E\u041F\\Resev2\\UI_elements.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{42136CCC-792E-49C2-B53D-8830B3212542}|Resev2.vcxproj|solutionrelative:UI_elements.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42136CCC-792E-49C2-B53D-8830B3212542}|Resev2.vcxproj|D:\\\u0423\u0447\u0435\u0431\u0430 2 \u0441\u0435\u043C\\\u041E\u041E\u041F\\Resev2\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{42136CCC-792E-49C2-B53D-8830B3212542}|Resev2.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42136CCC-792E-49C2-B53D-8830B3212542}|Resev2.vcxproj|D:\\\u0423\u0447\u0435\u0431\u0430 2 \u0441\u0435\u043C\\\u041E\u041E\u041F\\Resev2\\Game_logic.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{42136CCC-792E-49C2-B53D-8830B3212542}|Resev2.vcxproj|solutionrelative:Game_logic.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 128,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "GameData.cpp",
+              "DocumentMoniker": "D:\\\u0423\u0447\u0435\u0431\u0430 2 \u0441\u0435\u043C\\\u041E\u041E\u041F\\Resev2\\GameData.cpp",
+              "RelativeDocumentMoniker": "GameData.cpp",
+              "ToolTip": "D:\\\u0423\u0447\u0435\u0431\u0430 2 \u0441\u0435\u043C\\\u041E\u041E\u041F\\Resev2\\GameData.cpp",
+              "RelativeToolTip": "GameData.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-11-06T06:48:11.964Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Game_logic.cpp",
+              "DocumentMoniker": "D:\\\u0423\u0447\u0435\u0431\u0430 2 \u0441\u0435\u043C\\\u041E\u041E\u041F\\Resev2\\Game_logic.cpp",
+              "RelativeDocumentMoniker": "Game_logic.cpp",
+              "ToolTip": "D:\\\u0423\u0447\u0435\u0431\u0430 2 \u0441\u0435\u043C\\\u041E\u041E\u041F\\Resev2\\Game_logic.cpp",
+              "RelativeToolTip": "Game_logic.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-11-06T07:35:42.646Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "structs.h",
+              "DocumentMoniker": "D:\\\u0423\u0447\u0435\u0431\u0430 2 \u0441\u0435\u043C\\\u041E\u041E\u041F\\Resev2\\structs.h",
+              "RelativeDocumentMoniker": "structs.h",
+              "ToolTip": "D:\\\u0423\u0447\u0435\u0431\u0430 2 \u0441\u0435\u043C\\\u041E\u041E\u041F\\Resev2\\structs.h",
+              "RelativeToolTip": "structs.h",
+              "ViewState": "AgIAADAAAAAAAAAAAAAiwEcAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-11-06T07:36:10.194Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Game_logic.h",
+              "DocumentMoniker": "D:\\\u0423\u0447\u0435\u0431\u0430 2 \u0441\u0435\u043C\\\u041E\u041E\u041F\\Resev2\\Game_logic.h",
+              "RelativeDocumentMoniker": "Game_logic.h",
+              "ToolTip": "D:\\\u0423\u0447\u0435\u0431\u0430 2 \u0441\u0435\u043C\\\u041E\u041E\u041F\\Resev2\\Game_logic.h",
+              "RelativeToolTip": "Game_logic.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-11-06T07:35:29.155Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "main.cpp",
+              "DocumentMoniker": "D:\\\u0423\u0447\u0435\u0431\u0430 2 \u0441\u0435\u043C\\\u041E\u041E\u041F\\Resev2\\main.cpp",
+              "RelativeDocumentMoniker": "main.cpp",
+              "ToolTip": "D:\\\u0423\u0447\u0435\u0431\u0430 2 \u0441\u0435\u043C\\\u041E\u041E\u041F\\Resev2\\main.cpp",
+              "RelativeToolTip": "main.cpp",
+              "ViewState": "AgIAAGsAAAAAAAAAAAAQwJAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-10-19T07:10:17.66Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UI_elements.cpp",
+              "DocumentMoniker": "D:\\\u0423\u0447\u0435\u0431\u0430 2 \u0441\u0435\u043C\\\u041E\u041E\u041F\\Resev2\\UI_elements.cpp",
+              "RelativeDocumentMoniker": "UI_elements.cpp",
+              "ToolTip": "D:\\\u0423\u0447\u0435\u0431\u0430 2 \u0441\u0435\u043C\\\u041E\u041E\u041F\\Resev2\\UI_elements.cpp",
+              "RelativeToolTip": "UI_elements.cpp",
+              "ViewState": "AgIAAIoAAAAAAAAAAAAcwJYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-11-06T06:48:47.784Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UI_elements.h",
+              "DocumentMoniker": "D:\\\u0423\u0447\u0435\u0431\u0430 2 \u0441\u0435\u043C\\\u041E\u041E\u041F\\Resev2\\UI_elements.h",
+              "RelativeDocumentMoniker": "UI_elements.h",
+              "ToolTip": "D:\\\u0423\u0447\u0435\u0431\u0430 2 \u0441\u0435\u043C\\\u041E\u041E\u041F\\Resev2\\UI_elements.h",
+              "RelativeToolTip": "UI_elements.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-11-06T06:48:33.34Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GameData.h",
+              "DocumentMoniker": "D:\\\u0423\u0447\u0435\u0431\u0430 2 \u0441\u0435\u043C\\\u041E\u041E\u041F\\Resev2\\GameData.h",
+              "RelativeDocumentMoniker": "GameData.h",
+              "ToolTip": "D:\\\u0423\u0447\u0435\u0431\u0430 2 \u0441\u0435\u043C\\\u041E\u041E\u041F\\Resev2\\GameData.h",
+              "RelativeToolTip": "GameData.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-11-06T06:47:45.112Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+﻿  GameData.cpp
+  Game_logic.cpp
+  main.cpp
+D:\Учеба 2 сем\ООП\Resev2\main.cpp(71,27): warning C4244: инициализация: преобразование "__int64" в "int", возможна потеря данных
+  UI_elements.cpp
+D:\Учеба 2 сем\ООП\Resev2\UI_elements.cpp(111,52): warning C4267: =: преобразование из "size_t" в "int"; возможна потеря данных
+D:\Учеба 2 сем\ООП\Resev2\UI_elements.cpp(133,36): warning C4244: инициализация: преобразование "int" в "float", возможна потеря данных
+MSVCRT.lib(exe_winmain.obj) : error LNK2001: неразрешенный внешний символ WinMain.
+D:\Учеба 2 сем\ООП\Resev2\x64\Release\Resev2.exe : fatal error LNK1120: неразрешенных внешних элементов: 1
