@@ -1,6 +1,6 @@
 # Resev2 - Horror Adventure
 
-## [>> СКАЧАТЬ ИГРАБЕЛЬНУЮ ДЕМО-ВЕРСИЮ (v0.1.0) <<](https://github.com/Girjey/Resev2/releases/latest)
+## [>> СКАЧАТЬ ИГРАБЕЛЬНУЮ ДЕМО-ВЕРСИЮ (v0.1.0) <<](https://github.com/Girjey/Resev2-horror/releases/tag/v0.1.0)
 
 Resev2 (в разработке)
 Психологический хоррор-детектив с point-and-click геймплеем в стиле игр эпохи PS1.
