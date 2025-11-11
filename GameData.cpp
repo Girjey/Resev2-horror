@@ -1,108 +1,108 @@
 #include "gameData.h"
 
+// --- База данных предметов ---
 std::map<ItemType, Item> initializeItemDatabase() {
     std::map<ItemType, Item> db;
 
-    
-    db.emplace(ItemType::CAPTAIN_KEY, Item(ItemType::CAPTAIN_KEY, "Special Key", "Key with an engraved plot number, different from the regular keys in the plot.", true));
-    db.emplace(ItemType::ARMORY_KEY, Item(ItemType::ARMORY_KEY, "Heavy lead key", "A heavy lead key with a rough surface, slightly worn from use.", true));
-    db.emplace(ItemType::TECH_KEY, Item(ItemType::TECH_KEY, "Tech Key", "A small key covered with a layer of plyi, most likely it had been used for a long time", true));
-    db.emplace(ItemType::WORKING_FUSE, Item(ItemType::WORKING_FUSE, "Working Fuse", "Old fuse, type F, rated for 250V/1A. Traces of oxidation are visible on the contacts. Looks like it can fix the elevator power supply. ", true));
+    db.emplace(ItemType::CAPTAIN_KEY, Item(ItemType::CAPTAIN_KEY, u8"Особый ключ", u8"Ключ с выгравированным номером, отличающийся от обычных.", true));
+    db.emplace(ItemType::ARMORY_KEY, Item(ItemType::ARMORY_KEY, u8"Тяжелый свинцовый ключ", u8"Тяжелый свинцовый ключ с грубой поверхностью, слегка потертый.", true));
+    db.emplace(ItemType::TECH_KEY, Item(ItemType::TECH_KEY, u8"Технический ключ", u8"Маленький ключ с отблеском, отпирает небольшой замок.", true));
+    db.emplace(ItemType::WORKING_FUSE, Item(ItemType::WORKING_FUSE, u8"Рабочий предохранитель", u8"Старый предохранитель, тип F, на 250В/1А. На контактах видны следы окисления. Похоже, с помощью него можно восстановить электропитание лифта.", true));
 
     return db;
 }
 
+// --- Инициализация игровой карты ---
 std::map<LocationID, Room> initializeGameMap() {
     std::map<LocationID, Room> map;
 
-    // --- MAIN_HALL ---
+    // --- ГЛАВНЫЙ ЗАЛ ---
     Room hall;
-    hall.name = "Main Hall";
-    hall.description = "Main Hall. You see abandone hall, two staircases left and rigt and an elevator in the centre of the room. ";
+    hall.name = u8"Главный зал";
+    hall.description = u8"Главный зал. Вы видите заброшенный холл, две лестницы слева и справа, и лифт в центре комнаты.";
     hall.exits = {
-        {"Go Left", LocationID::CORRIDOR_L_1},
-        {"Go Right", LocationID::CORRIDOR_R_1},
-        {"Use elevator", LocationID::LABORATORY}
+        {u8"Идти налево", LocationID::CORRIDOR_L_1},
+        {u8"Идти направо", LocationID::CORRIDOR_R_1},
+        {u8"Использовать лифт", LocationID::CORRIDOR_R_2}
     };
-    hall.interactables = { {"Lift", true} };
+    hall.interactables = { {u8"Лифтом", true} };
     map[LocationID::MAIN_HALL] = hall;
 
-    // --- CORRIDOR_R_1 ---
+    // --- ПРАВЫЙ КОРИДОР, 1-Й ЭТАЖ ---
     Room corrR1;
-    corrR1.name = "Right Corridor 1F";
-    corrR1.description = "This corridor leads to the Lounge Room and Armory.";
+    corrR1.name = u8"Правый коридор, 1-й этаж";
+    corrR1.description = u8"Коридор ведет в комнату отдыха и оружейную.";
     corrR1.exits = {
-        {"Go Back", LocationID::MAIN_HALL},
-        {"Lounge", LocationID::ROOM_LOUNGE},
-        {"Armory", LocationID::ROOM_ARMORY}
+        {u8"Вернуться назад", LocationID::MAIN_HALL},
+        {u8"Комната отдыха", LocationID::ROOM_LOUNGE},
+        {u8"Оружейная", LocationID::ROOM_ARMORY}
     };
     map[LocationID::CORRIDOR_R_1] = corrR1;
 
-    // --- CORRIDOR_L_1 ---
+    // --- ЛЕВЫЙ КОРИДОР, 1-Й ЭТАЖ ---
     Room corrL1;
-    corrL1.name = "Left Corridor 1F";
-    corrL1.description = "This corridor leads to the Archive and Sweatbox.";
+    corrL1.name = u8"Левый коридор, 1-й этаж";
+    corrL1.description = u8"Коридор ведет в архив и карцер.";
     corrL1.exits = {
-        {"Go Back", LocationID::MAIN_HALL},
-        {"Archive", LocationID::ROOM_ARCHIVE},
-        {"SweatBox", LocationID::SWEATBOX}
+        {u8"Вернуться назад", LocationID::MAIN_HALL},
+        {u8"Архив", LocationID::ROOM_ARCHIVE},
+        {u8"Карцер", LocationID::SWEATBOX}
     };
     map[LocationID::CORRIDOR_L_1] = corrL1;
 
-    // --- Other 1F Rooms ---
-    map[LocationID::ROOM_LOUNGE] = { "Lounge Room", "An empty lounge. In the corner stands a a heavy, metal lockers, one of them bearing the captains insignia.", {{"Exit", LocationID::CORRIDOR_R_1}} };
+    // --- Другие комнаты, 1-й этаж ---
+    map[LocationID::ROOM_LOUNGE] = { u8"Комната отдыха", u8"Пустая комната отдыха. В углу стоят тяжелые металлические шкафчики, на одном из них имя капитана.", {{u8"Выход", LocationID::CORRIDOR_R_1}} };
     map[LocationID::ROOM_LOUNGE].room_items.push_back(ItemType::CAPTAIN_KEY);
-    map[LocationID::ROOM_LOUNGE].interactables = { {"Captains locker", true} };
+    map[LocationID::ROOM_LOUNGE].interactables = { {u8"Шкафчик капитана", true} };
 
-    map[LocationID::ROOM_ARMORY] = { "Armory", "A weapon storage room. There is a metal table against the far wall.", {{"Exit", LocationID::CORRIDOR_R_1}} };
+    map[LocationID::ROOM_ARMORY] = { u8"Оружейная", u8"Комната для хранения оружия. У дальней стены стоит металлический стол.", {{u8"Выход", LocationID::CORRIDOR_R_1}} };
     map[LocationID::ROOM_ARMORY].room_items.push_back(ItemType::TECH_KEY);
-    map[LocationID::ROOM_ARMORY].interactables = { {"Table", true} };
+    map[LocationID::ROOM_ARMORY].interactables = { {u8"Стол", true} };
     map[LocationID::ROOM_ARMORY].isLocked = true;
 
-    map[LocationID::ROOM_ARCHIVE] = { "Archive", "Dusty shelves fill the room, crammed with personnel files. One folder for 'Captain' catches your eye. There's also a shelf with 'Technical Manuals'.", {{"Exit", LocationID::CORRIDOR_L_1}} };
-    map[LocationID::ROOM_ARCHIVE].interactables = { {"Captains Dossier", true}};
-    map[LocationID::ROOM_ARCHIVE].interactables = { {"Tech manual", true} };
-    map[LocationID::SWEATBOX] = { "Sweatbox", "A grey and dusty punishment cell with a holding cell.", {{"Exit", LocationID::CORRIDOR_L_1}} };
+    map[LocationID::ROOM_ARCHIVE] = { u8"Архив", u8"В комнате стоит несколько пыльных стеллажей с личными делами сотрудников. Папка с надписью 'Капитан' привлекает ваше внимание. Также есть 'Технический мануал'.", {{u8"Выход", LocationID::CORRIDOR_L_1}} };
+    map[LocationID::ROOM_ARCHIVE].interactables = { {u8"Досье капитана", true}, {u8"Техническое руководство", true} };
+    map[LocationID::SWEATBOX] = { u8"Карцер", u8"Серая и пыльная карцерная камера.", {{u8"Выход", LocationID::CORRIDOR_L_1}} };
 
-    // --- 2F Corridors and Rooms ---
+    // --- Коридоры и комнаты, 2-й этаж ---
     map[LocationID::CORRIDOR_R_2] = {
-        "Right Corridor 2F",
-        "Leads to the Med Bay and Office.",
+        u8"Правый коридор, 2-й этаж",
+        u8"Ведет в медотсек и офис.",
         {
-            {"Go Down", LocationID::MAIN_HALL},
-            {"Med Bay", LocationID::ROOM_MED},
-            {"Office", LocationID::ROOM_OFFICE},
-            {"Cross Hall", LocationID::CORRIDOR_L_2}
+            {u8"Спуститься вниз", LocationID::MAIN_HALL},
+            {u8"Медотсек", LocationID::ROOM_MED},
+            {u8"Офис", LocationID::ROOM_OFFICE},
+            {u8"Перейти в левый коридор", LocationID::CORRIDOR_L_2}
         }
     };
 
     map[LocationID::CORRIDOR_L_2] = {
-        "Left Corridor 2F",
-        "Leads to the Tech Room and Captain's Cabin.",
+        u8"Левый коридор, 2-й этаж",
+        u8"Ведет в техническое помещение и кабинет капитана.",
         {
-            {"Go Down", LocationID::MAIN_HALL},
-            {"Tech Room", LocationID::ROOM_TECH},
-            {"Captain's room", LocationID::ROOM_CAP},
-            {"Cross Hall", LocationID::CORRIDOR_R_2}
+            {u8"Спуститься вниз", LocationID::MAIN_HALL},
+            {u8"Тех. помещение", LocationID::ROOM_TECH},
+            {u8"Каюта капитана", LocationID::ROOM_CAP},
+            {u8"Перейти в правый коридор", LocationID::CORRIDOR_R_2}
         }
     };
 
-    map[LocationID::ROOM_MED] = { "Med Bay", "A sterile medical bay. An old, bulky Electrocardiograph machine sits in the corner, unused.", {{"Exit", LocationID::CORRIDOR_R_2}} };
-    map[LocationID::ROOM_MED].interactables = { {"Electrocardiograph", true}};
+    map[LocationID::ROOM_MED] = { u8"Медотсек", u8"Стерильный медицинский отсек. В углу стоит старый, громоздкий электрокардиограф, которым давно не пользовались.", {{u8"Выход", LocationID::CORRIDOR_R_2}} };
+    map[LocationID::ROOM_MED].interactables = { {u8"Электрокардиограф", true} };
 
-    map[LocationID::ROOM_OFFICE] = { "Office", "A standard office. There's a note on the desk.", {{"Exit", LocationID::CORRIDOR_R_2}} };
-    map[LocationID::ROOM_OFFICE].interactables = { {"Desk", true} };
+    map[LocationID::ROOM_OFFICE] = { u8"Офис", u8"Обычный кабинет. На столе лежит записка.", {{u8"Выход", LocationID::CORRIDOR_R_2}} };
+    map[LocationID::ROOM_OFFICE].interactables = { {u8"Стол", true} };
 
-    map[LocationID::ROOM_CAP] = { "Captain's Cabin", "A lavishly furnished cabin.", {{"Exit", LocationID::CORRIDOR_L_2}} };
-    map[LocationID::ROOM_CAP].interactables = { {"Captains desk", true}};
+    map[LocationID::ROOM_CAP] = { u8"Кабинет капитана", u8"Роскошно обставленный кабинет.", {{u8"Выход", LocationID::CORRIDOR_L_2}} };
+    map[LocationID::ROOM_CAP].interactables = { {u8"Именной стол", true} };
     map[LocationID::ROOM_CAP].isLocked = true;
 
-    map[LocationID::ROOM_TECH] = { "Tech Room", "A dusty maintenance room. Requires a key.", {{"Exit", LocationID::CORRIDOR_L_2}} };
-    map[LocationID::ROOM_TECH].interactables = { {"Fusebox", true}};
+    map[LocationID::ROOM_TECH] = { u8"Техническое помещение", u8"Пыльная комната с электрощитками и рубильниками. Требуется ключ.", {{u8"Выход", LocationID::CORRIDOR_L_2}} };
+    map[LocationID::ROOM_TECH].interactables = { {u8"Блок предохранителей", true} };
     map[LocationID::ROOM_TECH].isLocked = true;
 
-    // --- FINAL ---
-    map[LocationID::LABORATORY] = { "Secret Laboratory", "Where it all began, and where it must end.", {{"Go Back UP", LocationID::MAIN_HALL}} };
+    // --- ФИНАЛ ---
+    map[LocationID::LABORATORY] = { u8"Секретная лаборатория", u8"Место, где все началось и где все должно закончиться.", {{u8"Вернуться наверх", LocationID::MAIN_HALL}} };
 
     return map;
 }

@@ -22,15 +22,15 @@ void handleMovement(
 
             if (next_room_id == LocationID::ROOM_ARMORY) {
                 keyNeeded = ItemType::ARMORY_KEY;
-                lockMessage = "The Armory door is locked tight. A heavy, old key is needed.";
+                lockMessage = u8"Дверь в оружейную наглухо заперта. Требуется тяжелый металлический ключ.";
             }
             else if (next_room_id == LocationID::ROOM_CAP) {
                 keyNeeded = ItemType::CAPTAIN_KEY;
-                lockMessage = "The Captain's Cabin door is locked. You need a special key.";
+                lockMessage = u8"Комната капитана заперта. Чтобы такую открыть требуется специальный ключ";
             }
             else if (next_room_id == LocationID::ROOM_TECH) {
                 keyNeeded = ItemType::TECH_KEY;
-                lockMessage = "The door to the Tech Room is sealed. A small Tech Key is required.";
+                lockMessage = u8"Дверь в техническую комнату заперта на замок. Нужен небольшой ключ для замка.";
             }
 
             if (keyNeeded != ItemType::NONE) {
@@ -41,7 +41,7 @@ void handleMovement(
                     nextRoom.isLocked = false;
                     gameState.inventory.erase(it);
                     std::string keyName = itemDatabase.at(keyNeeded).name;
-                    gameState.setSceneText("You used " + keyName + ". The door clicks open and the key breaks in the lock. It is now permanently unlocked.");
+                    gameState.setSceneText(u8"Вы использовали " + keyName + ". Дверь с щелчком открылась. Теперь вход сюда открыт навсегда");
                 }
                 else
                 {
@@ -54,7 +54,7 @@ void handleMovement(
         gameState.setSceneText(gameMap.at(next_room_id).description);
     }
     else {
-        gameState.setSceneText("You can't go that way.");
+        gameState.setSceneText(u8"Туда нельзя.");
     }
 }
 
@@ -64,25 +64,24 @@ void handleInteraction(
     GameState& gamestate,
     const std::map<ItemType, Item>& itemDatabase)
 {
-    if (gamestate.current_room_id == LocationID::MAIN_HALL && objectname == "Lift")
+    if (gamestate.current_room_id == LocationID::MAIN_HALL && objectname == u8"Лифт")
     {
-        gamestate.setSceneText("You look closely at the central elevator panel. The button for the lowest level is covered with a service plate. It seems to require external power or a specific access key to activate.");
-        return; // Возвращаемся после обработки уникального случая
+        gamestate.setSceneText(u8"Вы бегло осмотрели панель лифта. Кнопка нижнего этажа не светится. Похоже требуется активация электропитания или специальный ключ доступа.");
+        return; 
     }
 
-    // Общая логика для подбора предметов
     if (currentroom.interactables.count(objectname) && currentroom.interactables.at(objectname))
     {
 
-        if (gamestate.current_room_id == LocationID::ROOM_OFFICE && objectname == "Desk")
+        if (gamestate.current_room_id == LocationID::ROOM_OFFICE && objectname == u8"Стол")
         {
-            gamestate.setSceneText("You find a document: 'All personal files, including senior staff, have been moved to the main Archive.'");
+            gamestate.setSceneText(u8"Вы нашли записку с гербовой печатью: 'В запросе отказано. Информация запрошена неккоректно. Для ознакомления со всей информацией по участику обращайтесь в главный архив.'");
             return;
         }
 
-        if (gamestate.current_room_id == LocationID::ROOM_LOUNGE && objectname == "Captains locker")
+        if (gamestate.current_room_id == LocationID::ROOM_LOUNGE && objectname == u8"Шкафчик капитана")
         {
-            gamestate.setSceneText("The locker is sealed with a combination lock. A numeric code is required.");
+            gamestate.setSceneText(u8"Шкафчик заперт на кодовый замок.");
             return;
         }
 
@@ -94,19 +93,18 @@ void handleInteraction(
 
             std::string itemName = itemDatabase.at(pickedUpItemType).name;
 
-            gamestate.setSceneText("You found a " + itemName + ".");
+            gamestate.setSceneText(u8"Вы нашли  " + itemName + ".");
 
-            // После подбора предмета, делаем объект неактивным для взаимодействия
             currentroom.interactables.at(objectname) = false;
         }
         else
         {
-            gamestate.setSceneText("You look at the " + objectname + ". There is nothing else here.");
+            gamestate.setSceneText(u8"Вы посмотрели на " + objectname + u8". Здесь больше ничего нету.");
         }
     }
     else
     {
-        gamestate.setSceneText("You can't interact with that.");
+        gamestate.setSceneText(u8"Вы не можете взаимодейтсвовать с этим.");
     }
 }
 
@@ -119,17 +117,17 @@ void handlePlayerAction(
 {
     Room& currentRoom = gameMap.at(gameState.current_room_id);
 
-    if (action == "Look around") {
+    if (action == u8"Осмотреться") {
         gameState.setSceneText(currentRoom.description);
     }
-    else if (action.rfind("Interact ", 0) == 0) {
-        std::string objectname = action.substr(strlen("Interact "));
+    else if (action.rfind(u8"Взаимодействовать с ", 0) == 0) {
+        std::string objectname = action.substr(strlen(u8"Взаимодействовать с "));
         handleInteraction(objectname, currentRoom, gameState, itemDatabase);
     }
     else if (currentRoom.exits.count(action)) {
         handleMovement(action, currentRoom, gameState, gameMap, itemDatabase);
     }
     else {
-        gameState.setSceneText("Action: " + action + " - not yet implemented.");
+        gameState.setSceneText(u8"Действие: " + action + u8" еще не добавлено.");
     }
 }

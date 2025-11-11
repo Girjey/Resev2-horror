@@ -1,4 +1,3 @@
-// ui.cpp
 
 #include "UI_elements.h"
 #include <cstring> // for strlen
@@ -68,8 +67,8 @@ std::vector<ActionButton> generateActionButtons(
     std::vector<ActionButton> tempButtons;
     std::vector<RowInfo> rowInfos;
 
-    actionNames.push_back("Look around");
-    actionNames.push_back("Use item");
+    actionNames.push_back(u8"Осмотреться");
+    actionNames.push_back(u8"Использовать предмет");
 
     for (const auto& pair : currentRoom.exits) {
         actionNames.push_back(pair.first);
@@ -77,7 +76,7 @@ std::vector<ActionButton> generateActionButtons(
 
     for (const auto& pair : currentRoom.interactables) {
         if (pair.second) {
-            actionNames.push_back("Interact " + pair.first);
+            actionNames.push_back(u8"Взаимодействовать с " + pair.first);
         }
     }
 

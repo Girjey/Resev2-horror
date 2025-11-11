@@ -57,6 +57,7 @@ public:
     std::map<std::string, LocationID> exits;
     std::vector<ItemType> room_items;
     std::map<std::string, bool> interactables;
+    std::map < std::string, std::vector<ItemType> > RoomInventoryObject;
     std::map <std::string, std::string> puzzle_logic;
     bool isLocked = false;
 };

@@ -1,19 +1,39 @@
-// main.cpp
-
+﻿
 #include "raylib.h"
 #include "structs.h"
 #include "gameData.h"
 #include "game_logic.h"
 #include "UI_elements.h"
 
+// --- ИСПРАВЛЕННАЯ ВЕРСИЯ ---
+Font initRussianFont(const char* fontpath, int fontSize)
+{
+    int charsCount = 0;
+
+    // Добавляем u8 перед строкой
+    int* chars = LoadCodepoints
+    (
+        u8"АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя"
+        u8"0123456789"
+        u8".,!?-+()[]{}:;/\\\"'`~@#$%^&*=_|<> ",
+        &charsCount
+    );
+
+    Font font = LoadFontEx(fontpath, fontSize, chars, charsCount);
+    UnloadCodepoints(chars);
+    return font;
+}
+
 int main() {
-    const int TYPUNG_SPEED_FRAMES = 3;
+
+
+    const int TYPUNG_SPEED_FRAMES = 2;
     static int frame_counter = 0;
     const int screenWidth = 1920;
     const int screenHeight = 1080;
-    InitWindow(screenWidth, screenHeight, "Interface Prototype");
+    InitWindow(screenWidth, screenHeight, "Resev2");
 
-    Font customFont = LoadFont("VCR_OSD_MONO_1.001.ttf");
+    Font customFont = initRussianFont("vcrosdmonorusbyd.ttf",64);
     SetTargetFPS(60);
 
     // --- Game Data Initialization ---
@@ -65,7 +85,7 @@ int main() {
             {
                 if (gameState.visible_chars_count < gameState.scenes.length()) 
                 {
-                    gameState.visible_chars_count++;
+                    gameState.visible_chars_count += 1;
                 }
                 else
                 {
@@ -88,7 +108,7 @@ int main() {
             slot.hovered = CheckCollisionPointRec(mousePos, slot.rect);
             if (slot.hovered && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
                 int index = &slot - &inventory[0];
-                gameState.setSceneText("Clicked inventory slot " + std::to_string(index) + "!");
+                gameState.setSceneText(u8"Вы нажали на слот инвенторя " + std::to_string(index) + "!");
             }
         }
 
@@ -106,7 +126,7 @@ int main() {
         std::string visibleText = gameState.scenes.substr(0, gameState.visible_chars_count);
         DrawRectangleRec(mainScene, LIGHTGRAY);
         Rectangle textBounds = { mainScene.x + 20, mainScene.y + 60, mainScene.width - 15, mainScene.height - 80 };
-        DrawTextRec(customFont,visibleText.c_str(), textBounds, 30, 2.0f, true, BLACK);
+        DrawTextRec(customFont,visibleText.c_str(), textBounds, 24, 2.0f, true, BLACK);
         DrawRectangleLinesEx(mainScene, 2, BLACK);
 
         // Inventory Area
@@ -122,7 +142,7 @@ int main() {
 
         // Minimap
         DrawRectangleRec(minimap, DARKGREEN);
-        DrawTextEx(customFont, "Minimap", { minimap.x + 20, minimap.y + 20 }, 20, 2, WHITE);
+        DrawTextEx(customFont, u8"Миникарта", { minimap.x + 20, minimap.y + 20 }, 20, 2, WHITE);
 
         // Action Panel
         DrawRectangleRec(actionPanel, ORANGE);
@@ -130,10 +150,10 @@ int main() {
         // Draw Action Buttons
         for (auto& btn : buttons) {
             DrawRectangleRec(btn.rect, DARKGRAY);
-            Vector2 textSize = MeasureTextEx(customFont, btn.text.c_str(), 20, 2);
+            Vector2 textSize = MeasureTextEx(customFont, btn.text.c_str(), 18, 2);
             DrawTextEx(customFont, btn.text.c_str(),
                 { btn.rect.x + (btn.rect.width - textSize.x) / 2, btn.rect.y + (btn.rect.height - textSize.y) / 2 },
-                20, 2, WHITE);
+                18, 2, WHITE);
             if (btn.hovered) DrawRectangleLinesEx(btn.rect, 3, RED);
         }
 

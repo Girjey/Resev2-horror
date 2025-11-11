@@ -1,9 +1,6 @@
-﻿  GameData.cpp
-  Game_logic.cpp
-  main.cpp
-D:\Учеба 2 сем\ООП\Resev2\main.cpp(71,27): warning C4244: инициализация: преобразование "__int64" в "int", возможна потеря данных
-  UI_elements.cpp
-D:\Учеба 2 сем\ООП\Resev2\UI_elements.cpp(111,52): warning C4267: =: преобразование из "size_t" в "int"; возможна потеря данных
-D:\Учеба 2 сем\ООП\Resev2\UI_elements.cpp(133,36): warning C4244: инициализация: преобразование "int" в "float", возможна потеря данных
-MSVCRT.lib(exe_winmain.obj) : error LNK2001: неразрешенный внешний символ WinMain.
-D:\Учеба 2 сем\ООП\Resev2\x64\Release\Resev2.exe : fatal error LNK1120: неразрешенных внешних элементов: 1
+﻿main.obj : error LNK2005: "int * cyrillic_codepoints" (?cyrillic_codepoints@@3PAHA) уже определен в GameData.obj
+main.obj : error LNK2005: main уже определен в GameData.obj
+main.obj : error LNK2005: "void __cdecl initialize_cyrillic_codepoints(void)" (?initialize_cyrillic_codepoints@@YAXXZ) уже определен в GameData.obj
+GameData.obj : error LNK2001: неразрешенный внешний символ "class std::map<enum ItemType,class Item,struct std::less<enum ItemType>,class std::allocator<struct std::pair<enum ItemType const ,class Item> > > __cdecl initializeItemDatabase(void)" (?initializeItemDatabase@@YA?AV?$map@W4ItemType@@VItem@@U?$less@W4ItemType@@@std@@V?$allocator@U?$pair@$$CBW4ItemType@@VItem@@@std@@@4@@std@@XZ).
+GameData.obj : error LNK2001: неразрешенный внешний символ "class std::map<enum LocationID,class Room,struct std::less<enum LocationID>,class std::allocator<struct std::pair<enum LocationID const ,class Room> > > __cdecl initializeGameMap(void)" (?initializeGameMap@@YA?AV?$map@W4LocationID@@VRoom@@U?$less@W4LocationID@@@std@@V?$allocator@U?$pair@$$CBW4LocationID@@VRoom@@@std@@@4@@std@@XZ).
+D:\Учеба 2 сем\ООП\Resev2\x64\Release\Resev2.exe : fatal error LNK1120: неразрешенных внешних элементов: 2
